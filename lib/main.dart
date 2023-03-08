@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:m_learn/Dashboards/dashboard_one.dart';
 import 'package:m_learn/splash_screen.dart';
 
 void main() {
@@ -13,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MLearn',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const DashboardOne(),
     );
   }
 }
