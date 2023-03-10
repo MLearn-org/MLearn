@@ -11,37 +11,39 @@ class _DashboardOneState extends State<DashboardOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const SizedBox(height: 46),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            InkWell(
-              onTap: () {},
-              child: const Icon(Icons.menu, size: 35),
-            ),
-            Container(
-              width: 214,
-              height: 35,
-              child: TextField(),
-              decoration: const BoxDecoration(
-                color: Colors.amber,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const SizedBox(height: 46),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              InkWell(
+                onTap: () {},
+                child: const Icon(Icons.menu, size: 35),
               ),
+              Container(
+                width: 214,
+                height: 35,
+                child: TextField(),
+                decoration: const BoxDecoration(
+                  color: Colors.amber,
+                ),
+              )
+            ]),
+            const SizedBox(height: 40),
+            Container(
+              height: 274,
+              width: 246,
+              decoration: const BoxDecoration(color: Colors.black),
+            ),
+            const SizedBox(height: 39),
+            Container(
+              height: 274,
+              width: 246,
+              decoration: const BoxDecoration(color: Colors.amber),
             )
-          ]),
-          const SizedBox(height: 40),
-          Container(
-            height: 274,
-            width: 246,
-            decoration: const BoxDecoration(color: Colors.black),
-          ),
-          const SizedBox(height: 39),
-          Container(
-            height: 274,
-            width: 246,
-            decoration: const BoxDecoration(color: Colors.amber),
-          )
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: SizedBox(
         child: Container(
