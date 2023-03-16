@@ -13,93 +13,103 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _email = TextEditingController();
   final _password = TextEditingController();
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //add logo here
-            // Image.asset('logo.png'),
-            const Text(
-              "Login To Your Account",
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 15),
-            CustomTextfield(
-                textEditingController: _email, hintText: "Enter email here"),
-            const SizedBox(height: 20),
-            CustomTextfield(
-              hintText: "Password",
-              textEditingController: _password,
-              isObscure: true,
-            ),
-            const SizedBox(height: 25),
-            InkWell(
-                onTap: () {
-                  //navigate function here
-                },
-                child: const CustomButton(text: 'Login')),
-
-            const SizedBox(height: 10),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //have to add tik boc here,so add it
+                //add logo here
+                const Icon(Icons.person_pin, size: 140),
+                const SizedBox(height: 30),
+                const Text(
+                  "Login To Your Account",
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 25),
+                CustomTextfield(
+                    textEditingController: _email,
+                    hintText: "Enter email here"),
+                const SizedBox(height: 20),
+                CustomTextfield(
+                  hintText: "Password",
+                  textEditingController: _password,
+                  isObscure: true,
+                ),
+                const SizedBox(height: 40),
                 InkWell(
                     onTap: () {
-                      //remember function here
+                      //navigate function here
                     },
-                    child: const Text("Remember me ?")),
+                    child: const CustomButton(text: 'Login')),
+
+                const SizedBox(height: 20),
+
+                CheckboxListTile(
+                  value: isChecked,
+                  title: const Text(" Remember me ?",
+                      style: TextStyle(fontSize: 16)),
+                  onChanged: ((bool? value) {
+                    setState(() {
+                      isChecked = value!;
+                    });
+                  }),
+                ),
                 InkWell(
                     onTap: () {
                       //navigate to fogot password reset page
                     },
                     child: const Text("Forgot password ?")),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                    onTap: () {
-                      //google navigate
-                    },
-                    child: Image.asset('res/gfx/Ellipse 22.png', scale: 0.6)),
-                InkWell(
-                    onTap: () {
-                      //facebook navigate
-                    },
-                    child: Image.asset('res/gfx/Ellipse 23.png', scale: 0.6)),
-              ],
-            ),
-            const SizedBox(height: 10),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                        onTap: () {
+                          //google navigate
+                        },
+                        child:
+                            Image.asset('res/gfx/Ellipse 22.png', scale: 0.6)),
+                    const SizedBox(width: 20),
+                    InkWell(
+                        onTap: () {
+                          //facebook navigate
+                        },
+                        child:
+                            Image.asset('res/gfx/Ellipse 23.png', scale: 0.6)),
+                  ],
+                ),
+                const SizedBox(height: 30),
 
-            const Text(
-              "Don’t you have an account ?",
-              style: TextStyle(fontSize: 18),
+                const Text(
+                  "Don’t you have an account ?",
+                  style: TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 6),
+                InkWell(
+                  onTap: () {
+                    //navigate to sing up page
+                  },
+                  child: const Text(
+                    "SignUp",
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: (Colors.blue),
+                        fontWeight: FontWeight.w500),
+                  ),
+                )
+              ],
             ),
-            InkWell(
-              onTap: () {
-                //navigate to sing up page
-              },
-              child: const Text(
-                "SignUp",
-                style: TextStyle(
-                    fontSize: 20,
-                    color: (Colors.blue),
-                    fontWeight: FontWeight.w500),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );
