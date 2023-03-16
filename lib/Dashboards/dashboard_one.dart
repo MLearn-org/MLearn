@@ -24,10 +24,10 @@ class _DashboardOneState extends State<DashboardOne> {
               Container(
                 width: 214,
                 height: 35,
-                child: TextField(),
                 decoration: const BoxDecoration(
                   color: Colors.amber,
                 ),
+                child: const TextField(),
               )
             ]),
             const SizedBox(height: 40),
