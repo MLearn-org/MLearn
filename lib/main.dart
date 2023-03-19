@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:m_learn/Dashboards/dashboard_one.dart';
+import 'package:m_learn/Dashboards/dashboard_two.dart';
+import 'package:m_learn/Dashboards/main_dashboard.dart';
 import 'package:m_learn/login_page.dart';
 import 'package:m_learn/signup_page.dart';
 import 'package:m_learn/splash_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const MainDashboard(),
     );
   }
 }
