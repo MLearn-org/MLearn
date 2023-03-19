@@ -13,23 +13,18 @@ class _DashboardOneState extends State<DashboardOne> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 46),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              InkWell(
-                onTap: () {},
-                child: const Icon(Icons.menu, size: 35),
-              ),
-              Container(
-                width: 214,
-                height: 35,
-                decoration: const BoxDecoration(
-                  color: Colors.amber,
+            Row(
+              children: const [
+                SizedBox(width: 100),
+                Text(
+                  "Date , Month , Year",
+                  style: TextStyle(fontSize: 19),
                 ),
-                child: const TextField(),
-              )
-            ]),
+              ],
+            ),
             const SizedBox(height: 40),
             Container(
               height: 274,
@@ -43,40 +38,6 @@ class _DashboardOneState extends State<DashboardOne> {
               decoration: const BoxDecoration(color: Colors.amber),
             )
           ],
-        ),
-      ),
-      bottomNavigationBar: SizedBox(
-        child: Container(
-          height: 40,
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-              color: Colors.black26),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                  onTap: () {
-                    //navigate function here
-                  },
-                  child: const Icon(Icons.dashboard, size: 35)),
-              InkWell(
-                  onTap: () {
-                    //navigate function here
-                  },
-                  child: const Icon(Icons.calendar_month_outlined, size: 35)),
-              InkWell(
-                  onTap: () {
-                    //navigate function here
-                  },
-                  child: const Icon(Icons.stacked_line_chart_sharp, size: 35)),
-              InkWell(
-                  onTap: () {
-                    //navigate function here
-                  },
-                  child: const Icon(Icons.person_pin, size: 35))
-            ],
-          ),
         ),
       ),
     );
