@@ -34,13 +34,21 @@ class _MainDashboardState extends State<MainDashboard> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard), label: "Dashboard"),
+              icon: Icon(Icons.dashboard),
+              label: "Dashboard",
+              backgroundColor: Colors.grey),
           BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month_outlined), label: "Calendar"),
+              icon: Icon(Icons.calendar_month_outlined),
+              label: "Calendar",
+              backgroundColor: Colors.grey),
           BottomNavigationBarItem(
-              icon: Icon(Icons.stacked_line_chart_sharp), label: "Stacked"),
+              icon: Icon(Icons.stacked_line_chart_sharp),
+              label: "Stacked",
+              backgroundColor: Colors.grey),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin), label: "profile"),
+              icon: Icon(Icons.person_pin),
+              label: "profile",
+              backgroundColor: Colors.grey),
         ],
         onTap: (int index) {
           setState(() {
@@ -48,8 +56,7 @@ class _MainDashboardState extends State<MainDashboard> {
           });
         },
         currentIndex: _currentindex,
-        selectedItemColor: Colors.amber,
-        backgroundColor: Colors.grey,
+        selectedItemColor: Colors.black,
       ),
     );
   }
